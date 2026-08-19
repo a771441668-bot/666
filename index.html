@@ -1,1 +1,68 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>落地页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 全屏背景图，替换url为你的图片链接 */
+            background-image: url("https://picsum.photos/id/1067/1920/1080");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            /* 背景固定铺满全屏 */
+            min-height: 100vh;
+            /* 实现垂直+水平居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 给背景加一层半透明遮罩，按钮文字看得更清楚，不需要可以删除这一块 */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .center-box {
+            position: relative;
+            z-index: 2;
+        }
+
+        .jump-btn {
+            padding: 16px 48px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: #2563eb;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+
+        .jump-btn:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="center-box">
+        <!-- href 修改为你要跳转的地址 -->
+        <a href="https://github.com" target="_blank" class="jump-btn">立即前往</a>
+    </div>
+</body>
+</html>
